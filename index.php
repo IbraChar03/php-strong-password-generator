@@ -24,6 +24,13 @@
             background-color: #00ff41;
         }
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+
         .container {
             width: 50%;
             background-color: #222225;
