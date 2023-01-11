@@ -125,11 +125,14 @@
         .customRadio {
             height: 20px;
             width: 20px;
+            vertical-align: middle;
+            margin-bottom: 10px;
         }
 
         .textOptions {
             color: white;
             font-size: 20px;
+            vertical-align: middle;
         }
 
         .gen {
