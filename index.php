@@ -156,7 +156,7 @@
                     <div class="formBox">
                         <div class="length">
                             <label for="length" class=pswLength>Password Length </label>
-                            <input type="text" class="inputLength" name=length <?php
+                            <input type="number" class="inputLength" name=length <?php
                             if ($_GET["length"]) {
                                 echo "value = $length";
                             }
@@ -164,7 +164,7 @@
                             ?>>
                         </div>
                         <div class="options">
-                            <input class="customRadio" type="radio" name="numbers" <?php
+                            <input class="customRadio" type="checkbox" name="numbers" <?php
                             if ($numbers == "on") {
                                 $characters .= "0123456789";
                                 echo "checked";
@@ -173,7 +173,7 @@
                             ?>>
                             <label class=textOptions for="numbers">Numbers</label>
                             <br>
-                            <input class="customRadio" type="radio" name="letters" <?php
+                            <input class="customRadio" type="checkbox" name="letters" <?php
                             if ($letters == "on") {
                                 $characters .= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
                                 echo "checked";
@@ -181,7 +181,7 @@
                             ?>>
                             <label class=textOptions for="letters">Letters</label>
                             <br>
-                            <input class="customRadio" type="radio" name="symbols" <?php
+                            <input class="customRadio" type="checkbox" name="symbols" <?php
                             if ($symbols == "on") {
                                 $characters .= "~!@#$%^&*(){}[],./";
                                 echo "checked";
@@ -195,15 +195,23 @@
 
                 </div>
                 <div class="gen">
-                    <input type="submit" value="GENERATE" class=btn>
+                    <input type="submit" value="GENERATE" name="send" class=btn>
 
+                </div>
+                <div class="error">
+                    <?php
+                    if ($_GET["send"] && $numbers != "on" && $letters != "on" && $symbols != "on") {
+                        echo "<h1> Error! You need to select at least 1 option </h1>";
+                    }
+                    ?>
                 </div>
             </form>
 
 
             <div class="pswGen">
                 <?php
-                echo generateRandomString($length, $characters);
+                $passwordGen = generateRandomString($length, $characters);
+                echo $passwordGen;
                 ?>
             </div>
         </div>
