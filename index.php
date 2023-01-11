@@ -21,15 +21,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #00ff41;
         }
 
         .container {
             width: 50%;
             background-color: #222225;
-            height: 500px;
+            /* height: 500px; */
+            padding: 50px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 10px;
         }
 
         .inner-cont {
@@ -128,11 +131,12 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .btn {
-            padding: 8px 15px;
-            background-color: white;
+            padding: 12px 29px;
+            background-color: #00ff41;
             color: black;
             font-size: 15px;
             text-align: center;
