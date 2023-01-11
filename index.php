@@ -11,6 +11,7 @@
     $letters = $_GET["letters"];
     $symbols = $_GET["symbols"];
     $length = $_GET["length"];
+    require_once __DIR__ . "/partials/helper.php";
     ?>
 </head>
 
@@ -33,7 +34,7 @@
         <label for="letters">Letters</label>
         <input type="radio" name="letters" <?php
         if ($letters == "on") {
-            $characters .= "abcdefghijklmnopqrstuvwxyz";
+            $characters .= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             echo "checked";
         }
         ?>><br>
@@ -48,19 +49,8 @@
 
     </form>
     <?php
-    function generateRandomString($length, $characters)
-    {
-
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
-
-    }
-    echo generateRandomString($length, $characters)
-        ?>
+    echo generateRandomString($length, $characters);
+    ?>
 
 </body>
 
