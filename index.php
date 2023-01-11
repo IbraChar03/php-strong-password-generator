@@ -11,7 +11,6 @@
     $letters = $_GET["letters"];
     $symbols = $_GET["symbols"];
     $length = $_GET["length"];
-
     ?>
 </head>
 
@@ -51,10 +50,7 @@
     <?php
     function generateRandomString($length, $characters)
     {
-        // $symbols=`~!@#$%^&*(){}[],./?`
-        // $characters = 'abcdefghijklmnopqrstuvwxyz';
-        // $numbers = "0123456789";
-        // $characters = '0123456789';
+
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
